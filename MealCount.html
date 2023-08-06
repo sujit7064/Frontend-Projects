@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Meal Tracker</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+  }
+
+  .meal-tracker {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    text-align: center;
+    max-width: 400px;
+  }
+
+  h2 {
+    margin-bottom: 10px;
+  }
+
+  p {
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+
+  .calendar {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+    text-align: center;
+  }
+
+  .day {
+    font-weight: bold;
+  }
+
+  .day.marked {
+    background-color: #ff3300;
+    color: white;
+  }
+
+  .cross {
+    position: relative;
+    display: inline-block;
+  }
+
+  .cross::after, .cross::before {
+    content: "";
+    position: absolute;
+    height: 1px;
+    width: 100%;
+    background-color: red;
+    transform: rotate(45deg);
+  }
+
+  .cross::before {
+    transform: rotate(-45deg);
+  }
+</style>
+</head>
+<body>
+  <div class="meal-tracker">
+    <h2>Meal Tracker</h2>
+    <p>Total Meals: <span id="totalMeals">30</span></p>
+    <div class="calendar" id="calendar"></div>
+  </div>
+
+  <script>
+    const totalMeals = 30;
+    let remainingMeals = totalMeals;
+    const calendarElement = document.getElementById("calendar");
+    const totalMealsElement = document.getElementById("totalMeals");
+
+    function updateCalendar() {
+      calendarElement.innerHTML = "";
+      const today = new Date();
+      const daysInMonth = new Date(today.getFullYear(), today.getMonth() + 1, 0).getDate();
+      
+      for (let day = 1; day <= daysInMonth; day++) {
+        const dayElement = document.createElement("div");
+        dayElement.textContent = day;
+        dayElement.className = "day";
+        
+        dayElement.addEventListener("click", () => markMeal(dayElement, day));
+        
+        calendarElement.appendChild(dayElement);
+      }
+    }
+
+    function markMeal(dayElement, day) {
+      if (remainingMeals > 0) {
+        dayElement.classList.add("marked");
+        dayElement.innerHTML = `<span class="cross"></span>${day}`;
+        remainingMeals--;
+        totalMealsElement.textContent = remainingMeals;
+      }
+    }
+
+    updateCalendar();
+  </script>
+</body>
+</html>

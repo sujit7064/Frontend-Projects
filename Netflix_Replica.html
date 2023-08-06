@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Netflix-like Homepage</title>
+<style>
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-image: url('https://cdn.mos.cms.futurecdn.net/rDJegQJaCyGaYysj2g5XWY.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  header {
+    background-color: #111;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* Change color and font size of Netflix */
+  header h1 {
+    color: #e50914; /* Netflix red color */
+    font-size: 60px;
+    margin-bottom: 10px;
+  }
+
+  .search-bar {
+    width: 100%;
+    max-width: 400px;
+    padding: 12px; /* Increased padding for a better look */
+    border: none;
+    border-radius: 30px;
+    font-size: 16px;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+    outline: none; /* Remove focus border */
+  }
+
+  /* Styling for the search icon */
+  .search-icon {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    color: white;
+  }
+
+  nav {
+    background-color: #111;
+    color: white;
+    padding: 10px;
+    text-align: center;
+  }
+
+  .hero {
+    color: white;
+    text-align: center;
+    padding: 100px 0;
+  }
+
+  .content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 20px;
+  }
+
+  .content-item {
+    width: 30%;
+    margin: 10px;
+    padding: 10px;
+    box-sizing: border-box;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); /* Add shadow to content items */
+  }
+
+  .content-item img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
+
+  footer {
+    background-color: #111;
+    color: white;
+    padding: 20px;
+    text-align: center;
+  }
+</style>
+</head>
+<body>
+  <header>
+    <h1>NETFLIX</h1>
+    <div class="search-bar-container">
+      <i class="fas fa-search search-icon"></i>
+      <input type="text" class="search-bar" placeholder="Search for shows and movies">
+    </div>
+  </header>
+  <nav>
+    <a href="#">Home</a> |
+    <a href="#">TV Shows</a> |
+    <a href="#">Movies</a> |
+    <a href="#">My List</a>
+  </nav>
+  <div class="hero">
+    <h2>Watch Anywhere. Cancel Anytime.</h2>
+    <p>Join now to get started.</p>
+  </div>
+  <div class="content">
+    <div class="content-item">
+      <img src="https://mir-s3-cdn-cf.behance.net/project_modules/fs/736dee100650681.5f0da29e3cce4.jpg" alt="Show 1">
+      <h3>Money Heist</h3>
+    </div>
+    <div class="content-item">
+      <img src="https://rukminim1.flixcart.com/image/850/1000/k8q8nm80/poster/g/u/7/medium-poster-vikings-series-poster-poster-for-room-high-original-imafqze4hbwcrgzz.jpeg?q=20" alt="Show 2">
+      <h3>Vikings</h3>
+    </div>
+    <div class="content-item">
+      <img src="https://phantom-marca.unidadeditorial.es/258ad815aefd93fd14bc6c129c1702e2/crop/0x0/1597x899/resize/1200/f/jpg/assets/multimedia/imagenes/2021/10/01/16330974723192.png" alt="Show 3">
+      <h3>Squid Game</h3>
+    </div>
+    <!-- More content items -->
+  </div>
+  <footer>
+    <p>&copy; 2023 Netflix, Inc.</p>
+  </footer>
+</body>
+</html>
